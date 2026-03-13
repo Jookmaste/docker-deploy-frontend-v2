@@ -1,7 +1,10 @@
 services:
-  frontend:
-    image: jookmaste/234-deploylab-frontend:latest
-    pull_policy: always
+  backend:
+    image: jookmaste/234-deploylab-backend:latest
+    pull policy: always
     ports:
       - "8081:8080"
+    environment:
+      - VITE_GRAPHQL_URI=http://44.210.16.135/graphq1
+      - VITE_SERVER_URI=http://44.210.16.135:8082
     restart: unless-stopped
