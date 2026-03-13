@@ -1,0 +1,10 @@
+services:
+  frontend-new:
+    image: jookmaste/234-deploylab-frontend:latest
+    pull_policy: always
+    ports:
+      - "8084:80" 
+    environment:
+      - VITE_GRAPHQL_URI=http://44.210.16.135:8083/graphql  # ชี้ไปหา Backend ตัวใหม่
+      - VITE_SERVER_URI=http://44.210.16.135:8083
+    restart: unless-stopped
